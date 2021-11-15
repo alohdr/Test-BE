@@ -63,8 +63,15 @@ const sessions = [
 ];
 
 function result(sessions) {
-  result = sessions.filter(s => s.class.class_id <= 4 ).sort(s => s.session_id)
-  return result
+  for (var i = 0; i < sessions.length; i++) {
+    sessions.sort(function(a,b) {
+      if (a.session_id < b.session_id) {
+        return -1
+      }
+    })
+    console.log(sessions[i])
+  }
 }
+
 
 console.log(result(sessions));
