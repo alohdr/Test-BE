@@ -9,17 +9,34 @@
  * ]
  */
 const data = [
-  { session_name: 'first test', classes: [{ class_name: undefined, students: [{ student_name: 'budi' }] }] },
-  { session_name: null, classes: [{ class_name: 'second class', students: [{ student_name: 'adi' }] }] },
+  {
+    session_name: "first test",
+    classes: [{ class_name: undefined, students: [{ student_name: "budi" }] }],
+  },
+  {
+    session_name: null,
+    classes: [
+      { class_name: "second class", students: [{ student_name: "adi" }] },
+    ],
+  },
 ];
 
-function result(data) {
-  let obj = data;
-  if (obj.classes === undefined) {
-    delete obj.classes 
+function result(data) { 
+
+  if (data[0].classes[0].class_name === undefined) {
+    delete data[0].classes[0].class_name
+  } 
+  
+  if (data[1].session_name === null) {
+    delete data[1].session_name
   }
 
-  return obj
+  for (let index = 0; index < data.length; index++) {
+    const element = data[index];
+    console.log(element)
+  }
+
 }
 
+// console.log(delete data[1].session_name);
 console.log(result(data));
