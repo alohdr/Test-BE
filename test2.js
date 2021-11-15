@@ -8,9 +8,9 @@
 const data = [1, 4, 2, 3, 5, 3, 2, 4];
 
 function result(data) {
-  const uniqueSet = new Set(data);
-  const backToArray = [...uniqueSet];
-  console.log(backToArray.sort());
+  const unik = new Set(data);
+  const array = [...unik];
+  console.log(array.sort());
 }
 
 console.log(result(data));
